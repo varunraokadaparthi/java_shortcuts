@@ -1,10 +1,16 @@
 # Arrays
+
+### Create new List
+```
+List<Integer> list = Arrays.asList(1, 2, 3, 4);
+```
+
 ### Fill array with default values
 ```
 int[] myArray = new int[5]; 
 Arrays.fill(myArray, 1);    
 ```
-# Streams
+
 ### Sort by indices
 ```
 int[] test = {2, 3, 4, 1};
