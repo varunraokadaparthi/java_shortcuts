@@ -1,4 +1,4 @@
 # varunraokadaparthi.github.io
 
-[Threads](./threads/threads.md)
-[Java](./java/java.md)
+[Threads](./threads/threads.md) <br>
+[Java](./java/java.md) <br>
