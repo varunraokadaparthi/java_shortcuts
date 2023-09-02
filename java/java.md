@@ -1,1 +1,1 @@
-[Arrays](./arrays.md)
+[Arrays](./../java/arrays.md)
