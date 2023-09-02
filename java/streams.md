@@ -75,7 +75,7 @@ flatMapList.forEach(System.out::println);
 
 ### Convert 2d array to 1d array
 ```
-int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+int[][] arr = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} }
 Arrays.stream(arr)
     .flatMapToInt(x -> Arrays.stream(x))
     .toArray();
@@ -83,7 +83,7 @@ Arrays.stream(arr)
 
 ### Flatmap along with map
 ```
-int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+int[][] arr = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
 Arrays.stream(arr)
     .flatMapToInt(x -> Arrays.stream(x).map(y -> y + 10))
     .toArray();
