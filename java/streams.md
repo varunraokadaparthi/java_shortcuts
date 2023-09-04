@@ -103,7 +103,7 @@ Arrays.stream(arr)
 ### Convert 2d char array to list
 
 ```
-char[][] board = {{'X','X','X','X'},{'X','O','O','X'},{'X','X','O','X'},{'X','O','X','X'}};
+char[][] board = { {'X','X','X','X'},{'X','O','O','X'},{'X','X','O','X'},{'X','O','X','X'} };
 Arrays.stream(board)
     .map(x -> CharBuffer.wrap(x).chars()
         .mapToObj(ch -> (char)ch)
