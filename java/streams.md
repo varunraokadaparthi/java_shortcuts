@@ -39,7 +39,7 @@ List<String> nonNulllist = list.stream()
 ```
 
 # Sort
-### Sort int array by indices
+### Sort int array wrt indices
 ```
 int[] test = {2, 3, 4, 1};
 int[] sortedIndices = IntStream.range(0, test.length)
@@ -47,6 +47,15 @@ int[] sortedIndices = IntStream.range(0, test.length)
         .mapToInt(Integer::intValue)
         .toArray();
 Arrays.stream(sortedIndices).forEach(System.out::println);
+```
+
+### Sort list wrt indices
+```
+List<Integer> test = Arrays.asList(2, 3, 4, 1);
+int[] sortedIndices = IntStream.range(0, test.size())
+            .boxed().sorted(Comparator.comparing(i -> test.get(i)))
+            .mapToInt(Integer::intValue)
+            .toArray();
 ```
 
 # Map
@@ -87,4 +96,29 @@ int[][] arr = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
 Arrays.stream(arr)
     .flatMapToInt(x -> Arrays.stream(x).map(y -> y + 10))
     .toArray();
+```
+
+# Character
+
+### Convert 2d char array to list
+
+```
+char[][] board = {{'X','X','X','X'},{'X','O','O','X'},{'X','X','O','X'},{'X','O','X','X'}};
+Arrays.stream(board)
+    .map(x -> CharBuffer.wrap(x).chars()
+        .mapToObj(ch -> (char)ch)
+            .collect(Collectors.toList()))
+    .collect(Collectors.toList());
+```
+
+# Map
+
+### Access map
+```
+Map<List<List<Integer>>, Boolean> map = new HashMap<>();
+map.entrySet()
+        .stream()
+        .filter(entrySet -> entrySet.getValue())
+        .forEach(entrySet -> entrySet.getKey()
+            .forEach(cList -> board[cList.get(0)][cList.get(1)] = 'X'));
 ```
