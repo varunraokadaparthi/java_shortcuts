@@ -58,6 +58,15 @@ int[] sortedIndices = IntStream.range(0, test.size())
             .toArray();
 ```
 
+## Sort by comparing 2 different quantities in a 2d array
+```
+int[][] arr = {{5, 4, 7}, {3, 5 , 6}, {8, 6, 5}, {10, 5, 4}};
+Arrays.stream(arr)
+        .sorted(Comparator.comparingInt((int[] row) -> row[0])
+                .thenComparingInt((int[] row) -> row[1]))
+        .forEach(row -> Arrays.stream(row).forEach(System.out::println));
+```
+
 # Map
 ### add to each element
 ```
